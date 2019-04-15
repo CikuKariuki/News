@@ -8,7 +8,7 @@ def index():
     '''
     function that returns the index page and its data
     '''
-    title = 'Home News-Highlights from all over the world'
+    title = 'Home -News Highlights from all over the world'
     return render_template('index.html', title = title)
 
 @app.route('/news/<news_id>')
