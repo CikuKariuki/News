@@ -11,6 +11,8 @@ api_key = app.config['NEWS_API_KEY']
 
 #Getting the news base url
 base_url = app.config["NEWS_API_BASE_URL"]
+article_base_url = app.config["ARTICLE_API_BASE_URL"]
+
 
 def get_news(): 
     '''
