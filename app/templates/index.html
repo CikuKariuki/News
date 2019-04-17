@@ -13,7 +13,12 @@
        <h3>News Names</h3>
        <ul>
            {% for news_sources in sources %}
-                <li>{{news_sources.id}}</li>
+                <li><a href="/news/{{news_sources.id}}">Show</a></li>
+                <li>{{news_sources.name}} </li>
+                <li>{{news_sources.description}} </li>
+                <li>{{news_sources.category}} </li>
+                <li>{{news_sources.language}} </li>
+
             {% endfor %}
        </ul>
     </body>
