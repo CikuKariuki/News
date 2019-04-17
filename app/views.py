@@ -11,7 +11,7 @@ def index():
     '''
     #getting news sources
     news_sources = get_news()
-    print(news_sources)
+    # print(news_sources)
     title = 'Home -News Highlights from all over the world'
     return render_template('index.html', title = title, sources = news_sources)
 

@@ -1,4 +1,4 @@
-<!-- {%import 'macros.html' as macro%} -->
+{%import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,14 +12,12 @@
     <body>
        <h3>News Names</h3>
        <ul>
-           {% for news_sources in sources %}
-                <li><a href="/news/{{news_sources.id}}">Show</a></li>
-                <li>{{news_sources.name}} </li>
+       <!-- <li> {{macro.displayNewsList(sources)}} </li> -->
+        {% for news_sources in sources %}
+                <li><a href="/news/{{news_sources.id}}">{{news_sources.name}}</a></li>
                 <li>{{news_sources.description}} </li>
-                <li>{{news_sources.category}} </li>
-                <li>{{news_sources.language}} </li>
-
             {% endfor %}
+            
        </ul>
     </body>
 </html>  
