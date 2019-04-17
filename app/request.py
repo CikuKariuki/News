@@ -24,4 +24,25 @@ def get_news(sources):
         if get_news_response['results']:
             news_results_list = get_news_response['results']
             news_results = process_results(news_results_list) #takes in a list of dictionary objects and returns a list of news objects
+    
     return news_results #list of news objects
+
+def process_results(news_list):
+    '''
+    function that processes the news result and transforms them to a list of Objects
+    
+    Args: news_list: dictionaries that contain news details
+    '''
+    news_results = []
+    for news_item in news_list:
+        id = news_item.get('id')
+        name = news_item.get('name')
+        description = news_item.get('description')
+        language = news_item.get('language')
+
+        if language == "en":
+            news_object = News(id,name,description,language)
+            news_results.append(news_object)
+
+    return news_results
+
