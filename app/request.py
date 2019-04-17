@@ -65,9 +65,27 @@ def get_article(id):
 
                 if get_article_response['article']:
                         news_article_list =get_news_response['article']
-                        news_article = process_results(news_article_list)
+                        news_article = process_article(news_article_list)
 
         return news_article
 
-
+def process_article(article_list):
+        '''
+        function that processes the article results and transforms them to a list of objects
+        '''
+        news_article = []
+        for article in article_list:
+                id = article['source']['id']
+                name = article.get('name')
+                author = article.get('author')
+                title = article.get('title')
+                description = article.get('description')
+                url = article.get('url')
+                urlToImage = article.get('urlToImage')
+                publishedAt = article.get('publishedAt')
+                content = article.get('content')
  
+                article_object = Article(id,name,author,title,description,url,urlToImage,publishedAt,content)
+                news_article.append(article_object)
+
+        return news_article
