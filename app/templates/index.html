@@ -9,10 +9,12 @@
         {% else %}
         <title> News Highlights from all over the world </title>
         {% endif %}
+        {{ super() }}
+        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
     </head>
     <body>
         {% block content %}
-
+           
        <h1>News Highlights</h1>
        <ul>
            {% for news_sources in sources %}
