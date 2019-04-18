@@ -7,3 +7,4 @@ def four_Ow_four(error):
     Function to render error page
     '''
     return render_template('four_Ow_four.html'),404
+    
