@@ -1,4 +1,4 @@
-# NEWS HIGHLIGHTS
+# NEWS CENTRAL
 
 ## Author
 
@@ -15,10 +15,8 @@ Python 3.6, Flask
 
 | BEHAVIOUR    | INPUT   |  OUTPUT |
 | :------------- | :------------- | :--------------- |
-| Create account | User's name  | Username of account |
-| Username | Name to use in account  | Username |
-| Password Generator | yes to question,'would you like a generated password?' | A generated password |
-| Password | Desired password | Desired password |
+| Load website | website url | News highlights from different sources |
+
 
 
 ## Requirements
