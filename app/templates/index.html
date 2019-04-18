@@ -1,5 +1,5 @@
 {%extends 'base.html' %}
-<!-- {%import 'macros.html' as macro%} -->
+{%import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +10,7 @@
         <title> News Highlights from all over the world </title>
         {% endif %}
         {{ super() }}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
     </head>
     <body>
@@ -23,5 +24,10 @@
             {% endfor %}
        </ul>
        {% endblock %}
+       
+       <!-- <ul>
+           {{macro.displayNewsList(sources)}}
+       </ul> -->
+
     </body>
 </html>  
