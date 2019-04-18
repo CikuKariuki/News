@@ -1,5 +1,5 @@
-{%extends 'base.html'%}
-{%import 'macros.html' as macro%}
+{%extends 'base.html' %}
+<!-- {%import 'macros.html' as macro%} -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,19 +11,15 @@
         {% endif %}
     </head>
     <body>
-
         {% block content %}
-            
-       <h3>News Names</h3>
-       <ul>
-       <li> {{macro.displayNewsList(sources)}} </li>
-        <!-- {% for news_sources in sources %}
-                <li><a href="/news/{{news_sources.id}}">{{news_sources.name}}</a></li>
-                <li>{{news_sources.description}} </li>
-            {% endfor %} -->
-            
-       </ul>
-       {% endblock%}
 
+       <h1>News Highlights</h1>
+       <ul>
+           {% for news_sources in sources %}
+                <li><a href="/news/{{news_sources.id}}">{{news_sources.name}}</a></li>
+                <li>{{news_sources.description}}</li>
+            {% endfor %}
+       </ul>
+       {% endblock %}
     </body>
 </html>  

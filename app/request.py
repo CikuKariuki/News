@@ -63,18 +63,18 @@ def get_article(id):
 
                 news_article = None
 
-                if get_article_response['article']:
-                        news_article_list =get_news_response['article']
+                if get_article_response['articles']:
+                        news_article_list =get_article_response['articles']
                         news_article = process_article(news_article_list)
 
         return news_article
 
-def process_article(article_list):
+def process_article(news_article_list):
         '''
         function that processes the article results and transforms them to a list of objects
         '''
         news_article = []
-        for article in article_list:
+        for article in news_article_list:
                 id = article['source']['id']
                 name = article.get('name')
                 author = article.get('author')

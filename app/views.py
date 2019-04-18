@@ -15,16 +15,19 @@ def index():
     title = 'Home -News Highlights from all over the world'
     return render_template('index.html', title = title, sources = news_sources)
 
-@app.route('/news/<news_id>')
-def news(news_id):
+@app.route('/news/<id>')
+def news(id):
     '''
     returns the news details page and its data
     '''
-    return render_template('news.html', id=news_id)
+    articles = get_article(id)
+    return render_template('news.html', id=id, articles = articles)
 
-@app.route('/article/<article_id>')
-def article(article_id):
-    '''
-    returns the articles page and its data
-    '''
-    return render_template('article.html', id = article_id)
+# @app.route('/article/<article_id>')
+# def article(article_id):
+#     '''
+#     returns the articles page and its data
+#     '''
+
+
+#     return render_template('article.html', id = article_id)
