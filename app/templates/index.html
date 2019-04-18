@@ -12,17 +12,28 @@
         {{ super() }}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Fresca" rel="stylesheet">
     </head>
-    <body>
+    <body >
         {% block content %}
-           
-       <h1>News Highlights</h1>
-       <ul>
+        <div class="container" style="background-color:#78909c;">  
+            <div class="jumbotron">        
+            <h1 style="font-family:Fresca;">News Central</h1>
+            <p style="font-family:Fresca;">News updates from all over the world.</p>
+        </div>
+    </div>
+    <div class="container">
+       <div class="row">
            {% for news_sources in sources %}
-                <li><a href="/news/{{news_sources.id}}">{{news_sources.name}}</a></li>
-                <li>{{news_sources.description}}</li>
+           <div class="col-md-4">
+            
+                <button style=" font-family: Fresca; height:60px; width:250px; font-size:20px; border-radius: 10%; background:#b0bec5;"><a href="/news/{{news_sources.id}}" style="color:black;">{{news_sources.name}}</a></button>
+            
+                <p style="font-family:Fresca; font-weight: 500; font-size: 20px;" >{{news_sources.description}}</p>
+            </div>
             {% endfor %}
-       </ul>
+       </div>
+    </div>
        {% endblock %}
        
        <!-- <ul>

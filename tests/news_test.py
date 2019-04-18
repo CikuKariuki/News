@@ -1,6 +1,7 @@
 import unittest
-from models import news
-News = news.Sources
+from app.models import Sources
+
+# News = news.Sources
 #News = file.class
 
 class NewsTest(unittest.TestCase):

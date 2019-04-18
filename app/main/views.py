@@ -1,9 +1,10 @@
-from flask import render_template
-from app import app
-from .request import get_news, get_article
+from flask import render_template,request,redirect,url_for
+from . import main
+from ..request import get_news, get_article
+
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -15,7 +16,7 @@ def index():
     title = 'Home -News Highlights from all over the world'
     return render_template('index.html', title = title, sources = news_sources)
 
-@app.route('/news/<id>')
+@main.route('/news/<id>')
 def news(id):
     '''
     returns the news details page and its data
